@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>E.R Instrumentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="titulos">
+            <h1>Bienvenido/a al alquiler de instrumentos musicales</h1>
+    </header>
+
+    <main>
+        <div class="productos">
+            <div data-aos="flip-left" class="card" style="width: 15rem;">
+                <h3>Arpa</h3>
+                <img src="img/arpa.webp" class="card-img-top" alt="Arpa">
+                <div class="card-body">
+                    <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
+                    en teorizar la armonización musical.</p>
+                    <h4>Precio: $40000</h4>
+                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                </div>
+            </div>
+    
+            <div data-aos="flip-left" class="card" style="width: 15rem;">
+                <h3>Acordeon</h3>
+                <img src="/img/acordeon.webp" class="card-img-top" alt="Acordeon">
+                <div class="card-body">
+                    <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
+                    en teorizar la armonización musical.</p>
+                    <h4>Precio: $35000</h4>
+                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                </div>
+            </div>
+    
+            <div data-aos="flip-left" class="card" style="width: 15rem;">
+                <h3>Clarinete</h3>
+                <img src="img/clarinete.webp" class="card-img-top" alt="Clarinete">
+                <div class="card-body">
+                    <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
+                    en teorizar la armonización musical.</p>
+                    <h4>Precio: $55000</h4>
+                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                </div>
+            </div>
+    
+            <div data-aos="flip-left" class="card" style="width: 15rem;">
+                <h3>Guitarra</h3>
+                <img src="img/guitarra6.webp" class="card-img-top" alt="Guitarra">
+                <div class="card-body">
+                    <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
+                    en teorizar la armonización musical.</p>
+                    <h4>Precio: $60000</h4>
+                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                </div>
+            </div>
+    
+            <div data-aos="flip-left" class="card" style="width: 15rem;">
+                <h3>Saxo</h3>
+                <img src="img/saxo.webp" class="card-img-top" alt="Saxo">
+                <div class="card-body">
+                    <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
+                    en teorizar la armonización musical.</p>
+                    <h4>Precio: $65000</h4>
+                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                </div>
+            </div>
+    
+            <div data-aos="flip-left" class="card" style="width: 15rem;">
+                <h3>Violin</h3>
+                <img src="img/violin.webp" class="card-img-top" alt="Violin">
+                <div class="card-body">
+                    <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
+                    en teorizar la armonización musical.</p>
+                    <h4>Precio: $45000</h4>
+                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <article>
+        <h2>Carrito</h2>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td class="tabla">Producto</td>
+                    <td class="tabla">Precio</td>
+                    <td class="tabla">Cantidad
+            </thead>
+            <tbody id="contenedor">
+
+            </tbody>
+        </table>
+    </article>
+
+    <footer>
+        <h3>Muchisimas gracias por Alquilar.</h3>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+
+body{
+    background-color: #c0a068 !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "header header header"
+    "main main article"
+    "footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+}
+
+.titulos{
+    background-color: #926f34;
+    padding: 15px;
+
+}
+h1{
+    font-size: 35px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+/*PRODUCOTOS*/
+.card{
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #926f34 !important;
+    margin-bottom: 10px;
+}
+.card h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.card img{
+    padding: 10px;
+    border-radius: 15px;
+    height: 345px;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.productos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+article{
+    background-color: rgb(188, 180, 171);
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+article h2{
+    text-align: center;
+    text-transform:uppercase;
+    margin-top: 10px;
+}
+
+
+/*FOOTER**/
+footer{
+    text-align: center;
+}
