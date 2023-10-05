@@ -8,29 +8,35 @@ function agregaCarrito(e){
     let instrumentoAbuelo = instrumentoPadre.parentNode;
 
     let nombreInstrumento = instrumentoAbuelo.querySelector("h3").innerText;
-    //console.log(nombreInstrumento);
-
-    let precioInstrumento = instrumentoAbuelo.querySelector("h4").innerText;
-    //console.log(precioInstrumento);
+    
+    let precioInstrumento = instrumentoPadre.querySelector("h4").innerText;
 
     let imgInstrumento = instrumentoAbuelo.querySelector("img").src;
-    //console.log(imgInstrumento);
+
+    let cantidad = instrumentoPadre.querySelector("input").value
 
     let instrumentos = { 
         nombre: nombreInstrumento,
         precio: precioInstrumento,
         img: imgInstrumento,
-        cantidad: 1
+        cantidad: cantidad
     }
 
-    carrito.push(instrumentos);
 
+    carrito.push(instrumentos);
+    
     insertarCarrito()
+
+
 }
 
+// INSERTA PRODUCTO AL CARRITO
 function insertarCarrito(){
 
     let tabla = document.getElementById("contenedor");
+    
+
+    
 
     tabla.innerHTML = "";
     for(let instrumentos of carrito){
@@ -46,6 +52,7 @@ function insertarCarrito(){
 
     }
 
+    // BORRA LOS PRODUCTOS
     let btnBorrar = document.querySelectorAll(".borrarInstrumento");
 
     for( let btn of btnBorrar){
@@ -53,7 +60,7 @@ function insertarCarrito(){
     }
 
     let usuarioJson = JSON.stringify(carrito);
-    sessionStorage.setItem("usuarios", usuarioJson);
+    localStorage.setItem("usuarios", usuarioJson);
     
 }
 
@@ -69,17 +76,15 @@ function borrarProducto(e){
 
     let resultadoFilter = carrito.filter(eliminarProductos);
     carrito = resultadoFilter
-    console.log(resultadoFilter)
 }
 
-
-
+//Evento
 let btnAlquilar = document.querySelectorAll(".btnAlquilar");
-
-console.log(btnAlquilar);
 
 for( let boton of btnAlquilar){
 
     boton.addEventListener("click", agregaCarrito);
 
 }
+
+
