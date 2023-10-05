@@ -1,35 +1,35 @@
 
 let carrito = [];
 
-function agregaCarrito(e){
-
+function agregaCarrito(e) {
     let instrumento = e.target;
     let instrumentoPadre = instrumento.parentNode;
     let instrumentoAbuelo = instrumentoPadre.parentNode;
 
     let nombreInstrumento = instrumentoAbuelo.querySelector("h3").innerText;
-    
     let precioInstrumento = instrumentoPadre.querySelector("h4").innerText;
-
     let imgInstrumento = instrumentoAbuelo.querySelector("img").src;
+    let cantidad = instrumentoPadre.querySelector("input").value;
 
-    let cantidad = instrumentoPadre.querySelector("input").value
+    // Verificar si el instrumento ya está en el carrito
+    let instrumentoExistente = carrito.find(item => item.nombre === nombreInstrumento);
 
-    let instrumentos = { 
-        nombre: nombreInstrumento,
-        precio: precioInstrumento,
-        img: imgInstrumento,
-        cantidad: cantidad
+    if (instrumentoExistente) {
+        // Si el instrumento ya está en el carrito, actualiza la cantidad
+        instrumentoExistente.cantidad = parseInt(instrumentoExistente.cantidad) + parseInt(cantidad);
+    } else {
+        // Si el instrumento no está en el carrito, agrégalo
+        let instrumentoNuevo = {
+            nombre: nombreInstrumento,
+            precio: precioInstrumento,
+            img: imgInstrumento,
+            cantidad: cantidad
+        };
+        carrito.push(instrumentoNuevo);
     }
 
-
-    carrito.push(instrumentos);
-    
-    insertarCarrito()
-
-
+    insertarCarrito();
 }
-
 // INSERTA PRODUCTO AL CARRITO
 function insertarCarrito(){
 
