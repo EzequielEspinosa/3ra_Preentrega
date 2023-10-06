@@ -11,14 +11,13 @@ function agregaCarrito(e) {
     let imgInstrumento = instrumentoAbuelo.querySelector("img").src;
     let cantidad = instrumentoPadre.querySelector("input").value;
 
-    // Verificar si el instrumento ya está en el carrito
     let instrumentoExistente = carrito.find(item => item.nombre === nombreInstrumento);
 
     if (instrumentoExistente) {
-        // Si el instrumento ya está en el carrito, actualiza la cantidad
+
         instrumentoExistente.cantidad = parseInt(instrumentoExistente.cantidad) + parseInt(cantidad);
     } else {
-        // Si el instrumento no está en el carrito, agrégalo
+
         let instrumentoNuevo = {
             nombre: nombreInstrumento,
             precio: precioInstrumento,
@@ -27,17 +26,36 @@ function agregaCarrito(e) {
         };
         carrito.push(instrumentoNuevo);
     }
+    
+    let totalCarrito = carrito.reduce((total, instrumentoNuevo) => {
+        let precioTotalPorProducto = instrumentoNuevo.precio * instrumentoNuevo.cantidad;
+        return total + precioTotalPorProducto;
+    }, 0);
+    
+    console.log('Total del carrito: ' + totalCarrito);
+
+    Toastify({
+        text:"Producto agregado",
+        duration: 2000,
+        position: "left",
+        style:{
+            fontSize: "15px",
+            fontFamily: "Georgia, 'Times New Roman', Times, serif",
+            background: "#c0a068",
+            color: "black",
+            boderRadius: "10px"
+        }
+    }).showToast();
 
     insertarCarrito();
 }
+
+
 // INSERTA PRODUCTO AL CARRITO
 function insertarCarrito(){
 
     let tabla = document.getElementById("contenedor");
     
-
-    
-
     tabla.innerHTML = "";
     for(let instrumentos of carrito){
 
@@ -46,10 +64,9 @@ function insertarCarrito(){
                                 <td><p>${instrumentos.nombre}</p></td>
                                 <td>${instrumentos.precio}</td>
                                 <td>${instrumentos.cantidad}</td>
+                                
                                 <td><button class="btn btn-danger borrarInstrumento">Borrar</button></td>`
-
         tabla.append(ubicacion);
-
     }
 
     // BORRA LOS PRODUCTOS
@@ -76,6 +93,18 @@ function borrarProducto(e){
 
     let resultadoFilter = carrito.filter(eliminarProductos);
     carrito = resultadoFilter
+
+    Toastify({
+        text:"Producto borrado",
+        duration: 2000,
+        style:{
+            fontSize: "15px",
+            fontFamily: "Georgia, 'Times New Roman', Times, serif",
+            background: "#c0a068",
+            color: "black",
+            boderRadius: "10px"
+        }
+    }).showToast();
 }
 
 //Evento
