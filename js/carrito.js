@@ -27,12 +27,12 @@ function agregaCarrito(e) {
         carrito.push(instrumentoNuevo);
     }
     
-    let totalCarrito = carrito.reduce((total, instrumentoNuevo) => {
+    /*let totalCarrito = carrito.reduce((total, instrumentoNuevo) => {
         let precioTotalPorProducto = instrumentoNuevo.precio * instrumentoNuevo.cantidad;
         return total + precioTotalPorProducto;
     }, 0);
     
-    console.log('Total del carrito: ' + totalCarrito);
+    console.log('Total del carrito: ' + totalCarrito);*/
 
     Toastify({
         text:"Producto agregado",
@@ -47,6 +47,7 @@ function agregaCarrito(e) {
         }
     }).showToast();
 
+ 
     insertarCarrito();
 }
 
@@ -116,4 +117,24 @@ for( let boton of btnAlquilar){
 
 }
 
+// openweather
+//mi apikey
+//aac2d828126824f3159a295b8932b792
+
+function mostrarPosicion(posicion){
+
+    let latitud = posicion.coords.latitude;
+    let longitud = posicion.coords.longitude;
+    let key = "aac2d828126824f3159a295b8932b792";
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${key}&units=metric&lang=es`)
+        .then(response => response.json())
+        .then(data=>{
+                    console.log(data)
+                    document.body.innerHTML= `<p>${data.name}</p>`
+        
+        })
+}
+
+navigator.geolocation.getCurrentPosition(mostrarPosicion);
 
