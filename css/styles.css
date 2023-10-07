@@ -69,12 +69,26 @@ article h2{
     text-transform:uppercase;
     margin-top: 10px;
 }
-.total{
-    text-align: left;
+#totalDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-
+#totalTitle{
+    font-weight: bold;
+}
+#totalNumber{
+    font-weight: bold;
+}
 
 /*FOOTER**/
 footer{
     text-align: center;
+}
+
+#ubicacion{
+    color: white;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    
 }

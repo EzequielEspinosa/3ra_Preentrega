@@ -12,6 +12,7 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                     <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
                     en teorizar la armonización musical.</p>
                     <h4>$40000</h4>
-                    <button class="btn btn-primary btnAlquilar btnExistente">Alquilar</button>
+                    <button class="btn btn-primary btnAlquilar ">Alquilar</button>
                     <label for="cantidad"></label>
                     <input type="number" name="cantidad" min="1" max="10" value="1">
                 </div>
@@ -43,7 +44,7 @@
                     <p class="card-text">Este instrumento tiene sus orígenes en Egipto y Grecia cuyas civilizaciones fueron las primeras
                     en teorizar la armonización musical.</p>
                     <h4>$35000</h4>
-                    <button class="btn btn-primary btnAlquilar">Alquilar</button>
+                    <button class="btn btn-primary btnAlquilar ">Alquilar</button>
                     <label for="cantidad"></label>
                     <input type="number" name="cantidad" min="1" max="10" value="1">
                 </div>
@@ -114,11 +115,13 @@
                     <td class="tabla">Precio</td>
                     <td class="tabla">Cantidad
             </thead>
-            <tbody id="contenedor">
-
-            </tbody>
+            <tbody id="contenedor"></tbody>   
         </table>
-
+        <div id="totalDiv">
+            <p id="totalTitle"> TOTAL:</p>
+            <div id="totalNumber" value=""></div>
+        </div>
+        <button class="btn btn-danger btnPagar">PAGAR</button>
     </article>
 
     <footer>
@@ -126,12 +129,9 @@
             <h3>Muchisimas gracias por Alquilar.</h3>
             <p>Todos los derechos reservados.</p>
         </div>
-        <div class="ubicacion">
-            <p>
-                
-            </p>
-        </div>
+        <div id="ubicacion"></div>
     </footer>
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js/carrito.js"></script>
 </body>
